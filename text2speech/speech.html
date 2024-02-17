@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>
+			Text to Speech using Javascript
+		</title>
+		<style>
+			*{
+				padding:0;
+				margin:0;
+				font-family:sans-serif;
+			}
+
+			body{
+				background-color:black;
+				color:white;
+				display:flex;
+				flex-direction:column;
+				gap:1rem;
+				justify-content:center;
+				align-items:center;
+				height:100dvh;
+			}
+
+			input{
+				padding:1rem;
+				border:.25rem white;
+				outline:none;
+				border-radius:.5rem;
+				font-size:larger;
+				font-weight:bolder;
+			}
+
+			button{
+				padding:1rem;
+				border:none;
+				border-radius:.5rem;
+				background-color:green;
+				color:black;
+				font-weight:bolder;
+				font-size:larger;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>
+			Text To Speech Using Javascript
+		</h1>
+		<br>
+		<div>
+			<input placeholder="Enter the text to convert" type="text">
+			<button>Speech</button>
+		</div>
+		<script>
+			document.querySelector("button").addEventListener('click',()=>{
+				const text = document.querySelector("input").value;
+				const speech = new SpeechSynthesisUtterance(text);
+				console.log(text);
+				speech.rate = .65;
+				speechSynthesis.speak(speech);
+			})
+		</script>
+	</body>
+</html>
